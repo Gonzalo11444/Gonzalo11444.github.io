@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gonzalo López Menor | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0A0F1E;
+            --card-bg: #111827;
+            --border: #1E2D40;
+            --accent: #00D4FF;
+            --accent-hover: #0EA5E9;
+            --text-main: #F0F6FF;
+            --text-muted: #8B9FC0;
+            --cert-color: #FF6B35;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+
+        /* HERO SECTION */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at top, #111827 0%, #0A0F1E 100%);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            border-right: 3px solid var(--accent);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            max-width: 700px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary { background: var(--accent); color: var(--bg-dark); }
+        .btn-primary:hover { background: #fff; }
+        .btn-outline { border: 1px solid var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: rgba(0, 212, 255, 0.1); }
+
+        /* SECTIONS */
+        section { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        /* GRID PROYECTOS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.05);
+        }
+
+        .card h3 { color: #fff; margin-bottom: 15px; }
+        .card p { color: var(--text-muted); flex-grow: 1; margin-bottom: 20px; font-size: 0.95rem;}
+
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .card-links { display: flex; gap: 10px; }
+        .card-links .btn { padding: 8px 16px; font-size: 0.9rem; flex: 1; text-align: center;}
+
+        /* SKILLS & CERTS */
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 15px; }
+        .skill {
+            padding: 12px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        .cert {
+            border-color: var(--cert-color);
+            color: var(--cert-color);
+            background: rgba(255, 107, 53, 0.1);
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        footer { text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+        /* ANIMATIONS */
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent); } }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2rem; white-space: normal; animation: none; border: none;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="hero-title">> Gonzalo López Menor_</h1>
+        <h2 class="hero-subtitle">Information Systems Engineering</h2>
+        <p class="hero-desc">
+            Optimizando procesos corporativos a través de infraestructura tecnológica sólida y visión de negocio. Especializado en arquitectura de datos, gestión de servicios TI y ciberseguridad.
+        </p>
+        <div>
+            <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+            <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="proyectos">
+        <h2 class="section-title">Casos de Estudio & Arquitectura</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <h3>Diseño de RFP para Solución ITSM</h3>
+                <p>Consultoría tecnológica simulando la transformación digital de una Dirección de Sistemas. Definición de alcance funcional, niveles de servicio (SLAs), requerimientos de ciberseguridad y modelo de penalizaciones (Service Credits).</p>
+                <div class="tags">
+                    <span class="tag">ITSM</span><span class="tag">Business Analysis</span><span class="tag">SLAs</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/tu-usuario/ITSM-RFP-Design" class="btn btn-outline">Ver Repositorio</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Arquitectura de BBDD Distribuidas</h3>
+                <p>Despliegue y optimización de clústeres en PostgreSQL. Implementación de replicación física/lógica, particionamiento de datos masivos (25M+ registros) y análisis de rendimiento (EXPLAIN ANALYZE) para evitar cuellos de botella.</p>
+                <div class="tags">
+                    <span class="tag">PostgreSQL</span><span class="tag">Infrastructure</span><span class="tag">Performance</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/tu-usuario/Distributed-DB-Architecture" class="btn btn-outline">Ver Repositorio</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Telpark Business Intelligence</h3>
+                <p>Transformación de datos en bruto en cuadros de mando interactivos con Power BI para la toma de decisiones estratégicas. Modelado de datos y desarrollo de lógicas de negocio mediante DAX y Power Query.</p>
+                <div class="tags">
+                    <span class="tag">Power BI</span><span class="tag">Data Analytics</span><span class="tag">Reporting</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/tu-usuario/Telpark-Business-Intelligence" class="btn btn-outline">Ver Repositorio</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Applied AI Prototyping</h3>
+                <p>Implementación práctica y estudio comparativo de modelos de Machine Learning (Scikit-learn vs PyCaret AutoML). Evaluación orientada a la productivización de modelos y visión MLOps.</p>
+                <div class="tags">
+                    <span class="tag">Machine Learning</span><span class="tag">MLOps</span><span class="tag">Python</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/tu-usuario/tu-repo-IA" class="btn btn-outline">Ver Repositorio</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Backend Concurrente (JavaBnB)</h3>
+                <p>Sistema integral de gestión de reservas aplicando Arquitectura Orientada a Objetos y multithreading en Java. Prevención de overbooking y gestión de roles simulando un entorno PropTech.</p>
+                <div class="tags">
+                    <span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Multithreading</span>
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/tu-usuario/JavaBnB-Booking-System" class="btn btn-outline">Ver Repositorio</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Core Skills & Certificaciones</h2>
+        <div class="skills-wrap">
+            <div class="skill cert">🛡️ Certificación Gubernamental: Red Teaming & Ciberseguridad (ALIneAmiento)</div>
+            <div class="skill">Virtualización (Proxmox)</div>
+            <div class="skill">Infraestructura & Redes (Tailscale)</div>
+            <div class="skill">IT Project Management</div>
+            <div class="skill">Business Analysis</div>
+            <div class="skill">Linux Administration</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Gonzalo López Menor. Construyendo puentes entre el negocio y el código.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
